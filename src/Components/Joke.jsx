@@ -17,11 +17,10 @@ function Joke() {
       .then((response) => {
         if (response.data.type === "single") {
           setJokeSetup(response.data.joke);
-          console.log(response)
-
+          console.log(response);
         } else {
           setJokeSetup(`${response.data.setup} ${response.data.delivery}`);
-          console.log(response)
+          console.log(response);
         }
       })
       .catch((err) => {
@@ -40,13 +39,11 @@ function Joke() {
           Random Programming Joke Generator
         </h1>
         <div className="">
-          {error ? (
-            <p>{error}</p>
-          ) : (
-            <p className="text-xl">"{jokeSetup}"</p>
-          )}
+          {error ? <p>{error}</p> : <p className="text-xl">"{jokeSetup}"</p>}
         </div>
-        <button className="p-2 bg-blue-300 rounded-md" onClick={getNewJoke}>New Joke</button>
+        <button className="p-2 bg-blue-300 rounded-md" onClick={getNewJoke}>
+          New Joke
+        </button>
       </div>
     </div>
   );
